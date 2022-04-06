@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "FiltersList.module.scss"
+    ],
+    "names": [],
+    "file": "FiltersList.module.css"
+}
