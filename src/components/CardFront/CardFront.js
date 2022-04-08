@@ -5,7 +5,7 @@ const CardFront = (props) => {
 	const { beer } = props;
 
 	return (
-		<div className={styles.recipeCard}>
+		<div className={styles.CardFront}>
 			<CardFront beer={beer} />
 		</div>
 	);

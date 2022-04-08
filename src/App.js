@@ -13,9 +13,9 @@ const App = () => {
 	const handleSearchInput = (e) => {
 		setSearchTerm(e.target.value);
 	};
-	const handleSearchAcidity = (e) => {
-		setHighPh(!ph > 4);
-	};
+	// const handleSearchAcidity = (e) => {
+	// 	setHighPh(!ph < 4);
+	// };
 	const handleSearchClassic = (e) => {
 		setClassic(!classic);
 	};
@@ -41,10 +41,10 @@ const App = () => {
 	}, [searchTerm, highestABV, classic]);
 
 
-	useEffect(() => {
-	const getPh = beers.map((beer) => beer.ph);
-	 setHighPh(getPh)
-	}, [beers]);
+	// useEffect(() => {
+	// const getPh = beers.map((beer) => beer.ph);
+	//  setHighPh(getPh)
+	// }, [beers]);
 	return (
 		<>
 			{/* <Dashboard /> */}
