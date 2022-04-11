@@ -7,15 +7,16 @@ const App = () => {
 	const [beers, setBeers] = useState([]);
 	const [highestABV, setHighestABV] = useState(false);
 	const [classic, setClassic] = useState(false);
-	const [ph, setHighPh] = useState([]);
+	// This state toggles the acidity checkbox in navbar from true/false with each click.
+	const [beersWithHighPh, setBeersWithHighPh] = useState(false);
 	const [searchTerm, setSearchTerm] = useState('');
 
 	const handleSearchInput = (e) => {
 		setSearchTerm(e.target.value);
 	};
-	// const handleSearchAcidity = (e) => {
-	// 	setHighPh(!ph < 4);
-	// };
+	const handleSearchAcidity = (e) => {
+		setBeersWithHighPh(!beersWithHighPh);
+	};
 	const handleSearchClassic = (e) => {
 		setClassic(!classic);
 	};
@@ -24,7 +25,7 @@ const App = () => {
 	};
 
 	const searchBeersByName = searchTerm ? `?beer_name=${searchTerm}` : '';
-	
+
 	const abv = highestABV ? `?abv_gt=18` : '';
 
 	const classicRange = classic ? `?brewed_before=01-2008` : '';
@@ -40,11 +41,23 @@ const App = () => {
 		getBeers();
 	}, [searchTerm, highestABV, classic]);
 
+	//console.log(beers);
 
-	// useEffect(() => {
-	// const getPh = beers.map((beer) => beer.ph);
-	//  setHighPh(getPh)
-	// }, [beers]);
+	const filterBeersByPh = beers.filter((beer) => {
+		return beer.ph < 4;
+	});
+
+	const renderBeersWithHighPh = filterBeersByPh.map((beer) => {
+		//console.log(beer);
+		return <p key={beer.id}>{beer.name}</p>;
+	});
+
+	const renderAllBeers = beers.map((beer) => {
+		return <p key={beer.id}>{beer.name}</p>;
+	});
+
+	//console.log(filterBeersByPh);
+
 	return (
 		<>
 			{/* <Dashboard /> */}
@@ -52,22 +65,14 @@ const App = () => {
 				<NavBar
 					handleSearchInput={handleSearchInput}
 					handleSearchAbv={handleSearchAbv}
-					// handleSearchAcidity={handleSearchAcidity}
+					handleSearchAcidity={handleSearchAcidity}
 					handleSearchClassic={handleSearchClassic}
 				/>
 			</section>
 			<section className={styles.content}>
-				{beers.map((beer) => {
-					return <p key={beer.id}>{beer.name}</p>;
-				})}
+				{beersWithHighPh ? renderBeersWithHighPh : renderAllBeers}
+				<CardFront beer={beers} />
 			</section>
-			<section>
-			<h2>Acidity</h2>
-			<ul>{ph.map((p) => {
-              return <li>{p < 4}</li>;
-            })}
-          </ul>
-		</section>
 		</>
 	);
 };

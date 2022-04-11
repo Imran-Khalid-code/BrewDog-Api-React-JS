@@ -1,0 +1,45 @@
+.search input {
+  height: 100%;
+  width: 100px;
+  vertical-align: top;
+  margin-right: 10px;
+  font-size: 15px;
+  border: none;
+  border-bottom: solid 2px #46326f;
+  color: #46326f;
+}
+
+.search input:focus {
+  outline: none;
+  border-color: #ec4566;
+  color: #ec4566;
+}
+
+.search input::-webkit-input-placeholder {
+  color: #c7c5c5;
+}
+
+.search input:-ms-input-placeholder {
+  color: #c7c5c5;
+}
+
+.search input::-ms-input-placeholder {
+  color: #c7c5c5;
+}
+
+.search input::placeholder {
+  color: #c7c5c5;
+}
+
+.search .fa:hover {
+  cursor: pointer;
+  color: #ec4566;
+}
+
+@media only screen and (min-width: 768px) {
+  .search input {
+    width: unset;
+    font-size: 20px;
+  }
+}
+/*# sourceMappingURL=Searchbox.module.css.map */
