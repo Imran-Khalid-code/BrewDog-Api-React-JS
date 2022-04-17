@@ -19,8 +19,8 @@ $card-shadowing: 0 4px 7px rgba(0, 0, 0, 0.2), 0 4px 7px rgba(0, 0, 0, 0.27);
 $card-hover-shadowing: 0 14px 28px rgba(0, 0, 0, 0.27),
 	0 10px 10px rgba(0, 0, 0, 0.3);
 
-$NavBar-height-mb: 100%;
-$NavBar-height: 100%;
+$NavBar-height-mb: 60px;
+$NavBar-height: 75px;
 
 $border-rounding: 5px;
 
@@ -35,18 +35,4 @@ $border-rounding: 5px;
 	backface-visibility: hidden;
 	background-color: white;
 	position: absolute;
-
-	&:hover {
-		box-shadow: $card-hover-shadowing;
-		border: $secondary-border;
-		cursor: pointer;
-
-		.recipeDetails {
-			border-color: $secondary-color;
-
-			h2 {
-				color: $primary-text;
-			}
-		}
-	}
 }

@@ -1,1 +1,14 @@
-/* No CSS *//*# sourceMappingURL=Dashboard.module.css.map */
+.beerCard {
+  max-width: 100vw;
+  max-height: 100vh;
+  height: calc(100vh - 75px);
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+.nav {
+  max-width: 100vw;
+}
+/*# sourceMappingURL=Dashboard.module.css.map */

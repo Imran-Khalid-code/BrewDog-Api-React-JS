@@ -7,15 +7,14 @@ const Searchbox = (props) => {
 
 	return (
 		<div className={styles.search}>
-			{/* {input} */}
 			<input
 				type="text"
+				data-testid="searchBar"
 				placeholder={placeholder}
 				onInput={handleSearchInput}
 			/>
 			<span className={styles.fa}>
-				<h1>Search</h1>
-				{/* <FontAwesomeIcon icon="search" /> */}
+				<h1 data-testid="search"></h1>
 			</span>
 		</div>
 	);

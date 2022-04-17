@@ -1,5 +1,5 @@
 nav {
-  height: 100%;
+  height: 60px;
   max-width: 100vw;
   background-color: white;
   padding: 0 20px;
@@ -58,19 +58,30 @@ nav div.searchPanel .faStylesDisabled {
   text-decoration: none;
 }
 
-@media only screen and (min-width: 768px) {
+.div {
+  margin-left: 1px;
+}
+
+input {
+  margin-bottom: 15px;
+}
+
+@media only screen and (max-width: 768px) {
   nav {
-    height: 100%;
+    height: 75px;
   }
   nav div.searchPanel {
     font-size: 2em;
   }
   nav div img {
-    height: 50px;
+    height: 70px;
   }
   nav div h1 {
     display: unset;
     font-size: 1.75em;
+  }
+  nav div h5 {
+    font-size: 10px;
   }
 }
 /*# sourceMappingURL=NavBar.module.css.map */
