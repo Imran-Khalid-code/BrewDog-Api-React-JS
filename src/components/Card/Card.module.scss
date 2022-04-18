@@ -20,5 +20,13 @@
 	.back {
 		@extend %card;
 		transform: rotateY(180deg);
+
+		.heart {
+			position: absolute;
+			top: $base-spacing * 4;
+			right: $base-spacing * 4;
+			color: $primary-color;
+			font-size: 1.3rem;
+		}
 	}
 }

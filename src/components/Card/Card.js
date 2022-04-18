@@ -6,7 +6,7 @@ import CardBack from '../CardBack';
 const Card = (props) => {
 	const [isFaceDown, setIsFaceDown] = useState(false);
 
-	const { beer } = props;
+	const { beer, toggleFav } = props;
 	const flipStyles = isFaceDown ? styles.faceDown : '';
 
 	return (
@@ -18,7 +18,7 @@ const Card = (props) => {
 				<CardFront beer={beer} />
 			</div>
 			<div className={styles.back}>
-				<CardBack beer={beer} />
+				<CardBack beer={beer} toggleFav={toggleFav} />
 			</div>
 		</section>
 	);
