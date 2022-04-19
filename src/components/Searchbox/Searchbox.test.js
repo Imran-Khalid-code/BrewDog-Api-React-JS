@@ -1,28 +1,29 @@
-import { fireEvent, render } from '@testing-library/react';
-import { act } from 'react-dom/test-utils';
+import { render } from '@testing-library/react';
+
 import Searchbox from './Searchbox';
+import React from 'react';
+
+import { shallow } from 'enzyme';
+
+import beer from '../../data/beers';
+describe('Searchbox tests', () => {
+	let component;
+	let testBeer;
+
+	beforeEach(() => {
+		testBeer = beer[0];
+		component = shallow(<Searchbox beer={testBeer} />);
+	});
+
+	it('should render', () => {
+		expect(component).toBeTruthy();
+	});
+});
 
 describe('Input Component', () => {
 	it('rendered input', () => {
 		const { getByTestId } = render(<Searchbox searchTerm={false} />);
 		const input = getByTestId('searchBar');
 		expect(input).toBeTruthy();
-	});
-});
-
-it('rendered h1', () => {
-	const { getByTestId } = render(<Searchbox searchTerm={true} />);
-	const h1 = getByTestId('Search');
-	expect(h1).toBeTruthy();
-});
-
-it('change on input', async () => {
-	await act(async () => {
-		const { getByTestId } = render(<Searchbox searchTerm={false} />);
-		const input = getByTestId('searchBar');
-		//
-		const selection = '';
-		await fireEvent.change(input, { target: { value: selection } });
-		expect(input.innerHTML).toBe(selection);
 	});
 });

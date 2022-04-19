@@ -13,9 +13,7 @@ const Searchbox = (props) => {
 				placeholder={placeholder}
 				onInput={handleSearchInput}
 			/>
-			<span className={styles.fa}>
-				<h1 data-testid="search"></h1>
-			</span>
+			<span className={styles.fa}></span>
 		</div>
 	);
 };
