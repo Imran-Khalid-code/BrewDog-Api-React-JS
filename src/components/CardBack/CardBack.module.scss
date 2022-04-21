@@ -16,17 +16,10 @@
 	font-size: 12px;
 	text-align: center;
 	background-color: #f1f8e9;
-
-	.heart {
-		position: absolute;
-		top: $base-spacing * 4;
-		right: $base-spacing * 4;
-		color: $primary-color;
-		font-size: 1.3rem;
-	}
 }
+
 .beerProfile {
-	height: 40%;
+	height: 100%;
 	width: 100%;
 	padding: $base-spacing * 4;
 	border-top: none;
@@ -37,10 +30,6 @@
 	font-size: 20px;
 	font-weight: bold;
 	display: inline;
-
-	&:hover {
-		color: $secondary-color;
-	}
 
 	&:hover {
 		color: black;

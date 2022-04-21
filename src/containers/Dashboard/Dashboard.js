@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
 import React from 'react';
 import styles from './Dashboard.module.scss';
-import CardFront from '../../components/CardFront';
 import NavBar from '../../components/NavBar';
-import CardBack from '../../components/CardBack';
 import Card from '../../components/Card';
 
 const Dashboard = () => {
@@ -13,6 +11,14 @@ const Dashboard = () => {
 	// This state toggles the acidity checkbox in navbar from true/false with each click.
 	const [beersWithHighPh, setBeersWithHighPh] = useState(false);
 	const [searchTerm, setSearchTerm] = useState('');
+	const [favouritedBeers, setFavouritedBeers] = useState([]);
+
+	const handleFavourites = (beerObj) => {
+		// This handleFavourites function will be passed as a reference to the CardFront component to add that
+		// beerObj to the favouritedBeers array
+		const favouritedBeersList = [...favouritedBeers, beerObj];
+		setFavouritedBeers(favouritedBeersList);
+	};
 
 	const handleSearchInput = (e) => {
 		setSearchTerm(e.target.value);
@@ -48,6 +54,12 @@ const Dashboard = () => {
 		return beer.ph < 4;
 	});
 
+	// beers.forEach((beer) => {
+	// 	beer.favorites = false;
+	// });
+
+	console.log(beers);
+
 	const renderBeersWithHighPh = filterBeersByPh.map((beer) => {
 		//console.log(beer);
 		return <Card key={beer.id} beer={beer} />;
@@ -65,6 +77,7 @@ const Dashboard = () => {
 					handleSearchAbv={handleSearchAbv}
 					handleSearchAcidity={handleSearchAcidity}
 					handleSearchClassic={handleSearchClassic}
+					handleFavourites={handleFavourites}
 				/>
 			</section>
 			<section className={styles.beerCard}>

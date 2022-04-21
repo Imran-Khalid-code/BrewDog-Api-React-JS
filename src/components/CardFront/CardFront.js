@@ -2,7 +2,7 @@ import styles from './CardFront.module.scss';
 import React from 'react';
 
 const CardFront = (props) => {
-	const { name, tagline } = props.beer;
+	const { name, tagline, handleFavourites } = props.beer;
 
 	return (
 		<div className={styles.beerCard}>
@@ -14,6 +14,9 @@ const CardFront = (props) => {
 			</section>
 			<section className={styles.beerProfile}>
 				<h3>{tagline}</h3>
+				<button onClick={() => handleFavourites(props.beer)}>
+					Add To Favourites
+				</button>
 			</section>
 		</div>
 	);
