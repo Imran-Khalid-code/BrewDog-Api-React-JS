@@ -1,0 +1,48 @@
+.beerCard .front, .beerCard .back {
+  min-height: 400px;
+  max-width: 275px;
+  height: 100%;
+  width: 100%;
+  border-radius: 5px;
+  -webkit-box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2), 0 4px 7px rgba(0, 0, 0, 0.27);
+          box-shadow: 0 4px 7px rgba(0, 0, 0, 0.2), 0 4px 7px rgba(0, 0, 0, 0.27);
+  border: solid 2px #46326f;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  background-color: white;
+  position: absolute;
+}
+
+.beerCard {
+  height: 100%;
+  width: 100%;
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-perspective: 600px;
+          perspective: 600px;
+  position: relative;
+  z-index: 0;
+}
+
+.beerCard.faceDown {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.beerCard .back {
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+}
+
+.beerCard .back .heart {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #46326f;
+  font-size: 1.3rem;
+}
+/*# sourceMappingURL=Card.module.css.map */

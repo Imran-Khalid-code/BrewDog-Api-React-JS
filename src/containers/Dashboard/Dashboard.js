@@ -54,12 +54,6 @@ const Dashboard = () => {
 		return beer.ph < 4;
 	});
 
-	// beers.forEach((beer) => {
-	// 	beer.favorites = false;
-	// });
-
-	console.log(beers);
-
 	const renderBeersWithHighPh = filterBeersByPh.map((beer) => {
 		//console.log(beer);
 		return <Card key={beer.id} beer={beer} />;

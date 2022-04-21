@@ -23,7 +23,7 @@ const CardBack = (props) => {
 	const HeartIcon = favState ? ['faHeart'] : ['faHeart'];
 
 	return (
-		<div className={styles.cardBack}>
+		<div className={styles.beerCard}>
 			<span className={styles.heart} onClick={handleFavClick}></span>
 			<FontAwesomeIcon icon={HeartIcon} />
 			<section className={styles.beerProfile}>

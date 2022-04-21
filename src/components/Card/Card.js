@@ -11,7 +11,7 @@ const Card = (props) => {
 
 	return (
 		<section
-			className={`${styles.BeerCard} ${flipStyles}`}
+			className={`${styles.beerCard} ${flipStyles}`}
 			onClick={() => setIsFaceDown(!isFaceDown)}
 		>
 			<div className={styles.front}>
