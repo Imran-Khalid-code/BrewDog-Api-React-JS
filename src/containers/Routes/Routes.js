@@ -3,7 +3,7 @@ import { Router } from '@reach/router';
 
 import Dashboard from '../Dashboard';
 import NotFound from '../../components/NotFound';
-// import Favourites from '../../components/favourites';
+// import Favourites from '../../components/Favourites';
 
 const Routes = () => {
 	return (

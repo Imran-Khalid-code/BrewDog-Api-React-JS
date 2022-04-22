@@ -45,7 +45,7 @@ const NavBar = (props) => {
 			</div>
 
 			<div>
-				<Link to="favourites">
+				<Link to="Favourites">
 					<FontAwesomeIcon
 						icon={faBeer}
 						color="black"

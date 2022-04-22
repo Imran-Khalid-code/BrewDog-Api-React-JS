@@ -25,14 +25,14 @@ $NavBar-height: 75px;
 $border-rounding: 5px;
 
 %card {
-	min-height: 400px;
+	height: 400px;
 	max-width: 275px;
 	height: 100%;
 	width: 100%;
 	border-radius: $border-rounding;
-	box-shadow: $card-shadowing;
-	border: $primary-border;
+	// box-shadow: $card-shadowing;
+	// border: $primary-border;
 	backface-visibility: hidden;
-	background-color: white;
+	// background-color: white;
 	position: absolute;
 }
