@@ -1,5 +1,6 @@
 import React from 'react';
 import CardFront from '../../components/CardFront';
+import styles from './FavouritesPage';
 
 const FavouritesPage = (props) => {
 	const favourites = props.location.state.likedBeers;
@@ -8,7 +9,11 @@ const FavouritesPage = (props) => {
 		return <CardFront key={beer.id} beer={beer} />;
 	});
 
-	return <div className={styles.FavouritesPage}>{favouritesList}</div>;
+	return (
+		<section>
+			<div className={styles.favouritesPage}>{favouritesList}</div>
+		</section>
+	);
 };
 
 export default FavouritesPage;

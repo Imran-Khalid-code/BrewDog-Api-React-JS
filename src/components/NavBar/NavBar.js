@@ -46,7 +46,7 @@ const NavBar = (props) => {
 			</div>
 
 			<div>
-				<Link to={'FavouritesPage'} state={{ likedBeers: favouritedBeers }}>
+				<Link to={'/favourites'} state={{ likedBeers: favouritedBeers }}>
 					<FontAwesomeIcon
 						icon={faBeer}
 						color="black"
