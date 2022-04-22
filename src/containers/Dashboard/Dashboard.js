@@ -72,6 +72,7 @@ const Dashboard = () => {
 					handleSearchAcidity={handleSearchAcidity}
 					handleSearchClassic={handleSearchClassic}
 					handleFavourites={handleFavourites}
+					favouritedBeers={favouritedBeers}
 				/>
 			</section>
 			<section className={styles.beerCard}>

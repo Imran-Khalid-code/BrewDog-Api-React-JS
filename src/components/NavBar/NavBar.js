@@ -12,6 +12,7 @@ const NavBar = (props) => {
 		handleSearchAbv,
 		handleSearchAcidity,
 		handleSearchClassic,
+		favouritedBeers,
 	} = props;
 
 	return (
@@ -45,7 +46,7 @@ const NavBar = (props) => {
 			</div>
 
 			<div>
-				<Link to="Favourites">
+				<Link to={'Favourites'} state={{ likedBeers: favouritedBeers }}>
 					<FontAwesomeIcon
 						icon={faBeer}
 						color="black"
