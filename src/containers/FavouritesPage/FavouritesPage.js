@@ -1,23 +1,14 @@
 import React from 'react';
-import Card from '../../components/Card';
-import NavBar from '../../components/NavBar';
-import styles from './FavouritesPage.module.scss';
+import CardFront from '../../components/CardFront';
 
-const FavouritesPage = () => {
-	const [favouritedBeers, setFavouritedBeers] = useState(
-		beer.filter((beer) => beer.isFav)
-	);
+const FavouritesPage = (props) => {
+	const favourites = props.location.state.likedBeers;
 
-	const removeFromFav = (beer) => {
-		beer.isFav = false;
-		setFavouritedBeers(beer.filter((beer) => beer.isFav));
-	};
+	const favouritesList = favourites.map((beer) => {
+		return <CardFront key={beer.id} beer={beer} />;
+	});
 
-	const setFav = (
-		<FavouritesPage beer={favouritedBeers} toggleFav={removeFromFav} />
-	);
-
-	return <section className={styles.FavouritesPage}>{setFav}</section>;
+	return <div className={styles.FavouritesPage}>{favouritesList}</div>;
 };
 
 export default FavouritesPage;
