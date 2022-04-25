@@ -52,6 +52,7 @@ const NavBar = (props) => {
 						color="black"
 						fontSize={'30px'}
 					></FontAwesomeIcon>
+					Favourites
 				</Link>
 			</div>
 		</nav>
