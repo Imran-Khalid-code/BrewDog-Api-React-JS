@@ -17,7 +17,9 @@ const Dashboard = () => {
 		// This handleFavourites function will be passed as a reference to the CardFront component to add that
 		// beerObj to the favouritedBeers array
 		const favouritedBeersList = [...favouritedBeers, beerObj];
+
 		setFavouritedBeers(favouritedBeersList);
+		console.log(favouritedBeers);
 	};
 
 	const handleSearchInput = (e) => {
@@ -56,11 +58,15 @@ const Dashboard = () => {
 
 	const renderBeersWithHighPh = filterBeersByPh.map((beer) => {
 		//console.log(beer);
-		return <Card key={beer.id} beer={beer} />;
+		return (
+			<Card key={beer.id} beer={beer} handleFavourites={handleFavourites} />
+		);
 	});
 
 	const renderAllBeers = beers.map((beer) => {
-		return <Card key={beer.id} beer={beer} />;
+		return (
+			<Card key={beer.id} beer={beer} handleFavourites={handleFavourites} />
+		);
 	});
 
 	return (
@@ -71,7 +77,6 @@ const Dashboard = () => {
 					handleSearchAbv={handleSearchAbv}
 					handleSearchAcidity={handleSearchAcidity}
 					handleSearchClassic={handleSearchClassic}
-					handleFavourites={handleFavourites}
 					favouritedBeers={favouritedBeers}
 				/>
 			</section>

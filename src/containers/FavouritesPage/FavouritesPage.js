@@ -3,6 +3,7 @@ import CardFront from '../../components/CardFront';
 import styles from './FavouritesPage';
 
 const FavouritesPage = (props) => {
+	console.log(props);
 	const favourites = props.location.state.likedBeers;
 
 	const favouritesList = favourites.map((beer) => {

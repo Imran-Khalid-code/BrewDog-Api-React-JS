@@ -3,7 +3,9 @@ import React from 'react';
 import { Link } from '@reach/router';
 
 const CardFront = (props) => {
-	const { name, tagline, handleFavourites } = props.beer;
+	const { handleFavourites } = props;
+	const { name, tagline } = props.beer;
+	//console.log(props.beer);
 
 	return (
 		<div className={styles.beerCard}>
@@ -15,14 +17,13 @@ const CardFront = (props) => {
 			</section>
 			<section className={styles.beerProfile}>
 				<h3>{tagline}</h3>
-				<Link to="Favourites" style={{ textDecoration: 'none' }}>
-					<button
-						className={styles.button}
-						onClick={() => handleFavourites(props.beer)}
-					>
-						Add To Favourites
-					</button>
-				</Link>
+
+				<button
+					className={styles.button}
+					onClick={() => handleFavourites(props.beer)}
+				>
+					Add To Favourites
+				</button>
 			</section>
 		</div>
 	);

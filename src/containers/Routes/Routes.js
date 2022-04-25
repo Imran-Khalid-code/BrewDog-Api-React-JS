@@ -9,7 +9,7 @@ const Routes = () => {
 	return (
 		<Router>
 			<Dashboard path="/" />
-			<FavouritesPage path="favourites" />
+			<FavouritesPage path="/favourites" />
 			<NotFound default />
 		</Router>
 	);
